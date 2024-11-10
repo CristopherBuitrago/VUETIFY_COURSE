@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <v-app class="grey">
+    <NavBar />
     <v-main>
       <router-view />
     </v-main>
@@ -7,12 +8,18 @@
 </template>
 
 <script>
-
+import NavBar from './components/NavBar.vue';
 export default {
   name: 'App',
 
   data: () => ({
     //
   }),
+  components: {
+    /*
+     * We put children components here
+     */
+    NavBar
+  }
 };
 </script>
