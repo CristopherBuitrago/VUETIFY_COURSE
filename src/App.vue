@@ -3,13 +3,9 @@
     <!-- Contenido principal -->
     <v-main>
       <!-- Encabezado de la aplicación -->
-      <NavBar />
-      <v-container fluid>
-        <v-row>
-          <v-col cols="12">
-            <router-view />
-          </v-col>
-        </v-row>
+      <NavBar/>
+      <v-container>
+        <router-view />
       </v-container>
     </v-main>
   </v-app>
