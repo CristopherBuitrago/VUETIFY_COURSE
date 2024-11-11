@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app >
     <!-- Contenido principal -->
     <v-main>
       <!-- Encabezado de la aplicación -->

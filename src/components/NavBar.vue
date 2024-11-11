@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <v-toolbar app class="blue elevation-2">
+    <v-toolbar app flat class="primary">
       <!-- Icono de menú para abrir el drawer -->
       <v-btn icon dark @click="drawer = !drawer">
-        <v-icon dark>mdi-menu</v-icon>
+        <v-icon>mdi-menu</v-icon>
       </v-btn>
 
       <!-- Título de la barra de herramientas -->
@@ -24,7 +24,7 @@
     </v-toolbar>
 
     <!-- Drawer de navegación controlado por la variable 'drawer' -->
-    <v-navigation-drawer app v-model="drawer" class="indigo">
+    <v-navigation-drawer app v-model="drawer" class="primary">
       <p>Test</p>
     </v-navigation-drawer>
   </nav>
