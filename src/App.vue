@@ -1,10 +1,10 @@
 <template>
-  <v-app >
+  <v-app>
+    <!-- Encabezado de la aplicación -->
+    <NavBar />
     <!-- Contenido principal -->
-    <v-main>
-      <!-- Encabezado de la aplicación -->
-      <NavBar/>
-      <v-container>
+    <v-main class="main-content">
+      <v-container fluid>
         <router-view />
       </v-container>
     </v-main>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/nav/NavBar.vue';
 
 export default {
   name: 'App',
@@ -23,8 +23,12 @@ export default {
 </script>
 
 <style scoped>
-/* Puedes aplicar estilos globales o específicos aquí para el layout */
 .v-app {
   background-color: #f5f5f5; /* Fondo claro para toda la aplicación */
+}
+
+/* Asegura que el contenido no esté cubierto por el NavBar */
+.main-content {
+  padding-top: 64px; /* Ajusta este valor según la altura de tu NavBar */
 }
 </style>

@@ -1,9 +1,83 @@
 <template>
   <div>
-    <h1>Home page</h1>
+    <v-subheading class="grey--text">Home page</v-subheading>
     <v-container class="my-5">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nobis quaerat tempora consequatur, autem, perspiciatis tempore officia veniam odio ratione vel quia repellendus magni velit dolor, dolorum sequi mollitia ullam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint beatae. Numquam libero nesciunt omnis doloremque voluptates itaque obcaecati facere nam ducimus. Nihil ipsum voluptates voluptatem consequatur numquam, illum consectetur.</p>
+      <v-row justify="center">
+        <v-col cols="12" sm="8" md="6" align="center">
+          <h1>Welcome user</h1>
+        </v-col>
+      </v-row>
+
+      <v-row justify="center">
+        <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="6" md="4">
+          <v-card class="primary_color elevation-5 d-flex flex-column align-center justify-center text-center" height="20vh">
+            <v-card-title class="text-h5">
+              {{ card.title }}
+            </v-card-title>
+
+            <v-card-subtitle>{{ card.message }}</v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn text>
+                Click me!
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'HomeView',
+  data() {
+    return {
+      cards: [
+        {
+          title: 'Learning Vue',
+          message: 'This is a card component made with Vue',
+        },
+        {
+          title: 'Learning Vuetify',
+          message: 'This is a card component made with Vuetify',
+        },
+        {
+          title: 'Learning Vue',
+          message: 'This is a card component made with Vue',
+        },
+        {
+          title: 'Learning Vuetify',
+          message: 'This is a card component made with Vuetify',
+        },
+        {
+          title: 'Learning Vue',
+          message: 'This is a card component made with Vue',
+        },
+        {
+          title: 'Learning Vuetify',
+          message: 'This is a card component made with Vuetify',
+        },
+        {
+          title: 'Learning Vue',
+          message: 'This is a card component made with Vue',
+        },
+        {
+          title: 'Learning Vuetify',
+          message: 'This is a card component made with Vuetify',
+        },
+        {
+          title: 'Learning Vue',
+          message: 'This is a card component made with Vue',
+        },
+        {
+          title: 'Learning Vuetify',
+          message: 'This is a card component made with Vuetify',
+        }
+        
+      ]
+    }
+  }
+}
+</script>
