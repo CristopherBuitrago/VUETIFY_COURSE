@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-subheading class="grey--text">Home page</v-subheading>
+    <v-subheader class="grey--text">Home page</v-subheader>
     <v-container class="my-5">
       <v-row justify="center">
         <v-col cols="12" sm="8" md="6" align="center">
