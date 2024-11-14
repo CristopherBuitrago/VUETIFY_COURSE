@@ -1,16 +1,18 @@
 <template>
   <v-card flat width="100%">
-    <v-subheader class="grey--text">Medicaments</v-subheader>
-    <v-container class="my-5">
-      <v-row justify="center">
-        <v-col cols="12" sm="8" md="6" align="center">
-          <h1>Medicaments</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt commodi totam aliquid vitae reprehenderit consequuntur iure eligendi blanditiis exercitationem nam dicta cumque, iste nisi inventore quibusdam facilis mollitia ullam impedit!</p>
-        </v-col>
-      </v-row>
-
-      <v-divider class="ma-5"/>
-
+    <v-card-subtitle class="grey--text">Medicaments</v-card-subtitle>
+    <v-container class="ma-0">
+      <v-card-title class="display-1 mb-3">
+        Medicaments
+      </v-card-title>
+      <v-card-subtitle class="ma-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad eveniet provident accusantium soluta officiis veniam deserunt distinctio ducimus alias dolor fugiat nisi maiores, magnam molestiae consequuntur facere dolorum corporis? lor
+      </v-card-subtitle>
+    </v-container>
+    
+    <v-divider class="ma-5"/>
+    
+    <v-container flat class="my-5">
       <v-row justify="center">
         <v-col 
           cols="12"
@@ -20,9 +22,9 @@
           align="center"  
           class="d-flex justify-center"
           v-for="drug in drugs"
-          :key="`${drug.id}-${drug.name}`"
+          :key="`${drug.id}`"
         >
-          <Post :title="drug.name" :description="drug.case"/>
+          <Post :id="drug.id" :title="drug.name" :description="drug.case"/>
         </v-col>
       </v-row>
     </v-container>
@@ -45,7 +47,7 @@ export default {
   },
   async mounted() {
     // Llamada al servicio para obtener los medicamentos
-    this.drugs = await MedicamentService.fetchAllMedicaments();
+    this.drugs =await MedicamentService.fetchAllMedicaments();
   }
 }
 </script>

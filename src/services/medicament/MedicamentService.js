@@ -1,25 +1,53 @@
 class MedicamentService {
-  
   constructor() {
-    this.medicaments = [];
+    this.baseUrl = 'https://api.fda.gov/drug/label.json';
   }
 
-  // Método para obtener todos los medicamentos
-  async fetchAllMedicaments() {
+  // Obtener medicamento por nombre
+  async fetchMedicamentById(drugName) {
     try {
-      const response = await fetch('https://api.fda.gov/drug/event.json?limit=4');
-      const data = await response.json();
-      
-      // Extrae los datos relevantes y guárdalos en el arreglo de medicamentos
-      this.medicaments = data.results.flatMap((item) =>
-        item.patient.drug.map((drug) => ({
-          id: item.safetyreportid, // Usa un ID único si está disponible
-          name: drug.medicinalproduct, // Nombre del producto
-          case: drug.drugindication, // Caso de uso
-        }))
-      );
+      const response = await fetch(`${this.baseUrl}?search=openfda.brand_name:"${drugName}"`);
+      const { results } = await response.json();
 
-      return this.medicaments; // Devuelve la lista de medicamentos obtenida
+      // verificar que el resultado no este vacio
+      if (results?.length) {
+        const item = results[0];
+        return {
+          id: item.id,
+          name: item.openfda.generic_name?.[0] || 'N/A',
+          brandName: item.openfda.brand_name?.[0] || 'N/A',
+          purpose: item.purpose?.[0] || 'No purpose information available',
+          activeIngredient: item.active_ingredient?.join(', ') || 'No active ingredients available',
+          warnings: item.warnings?.join(' ') || 'No warnings available',
+          dosage: item.dosage_and_administration?.join(' ') || 'Dosage information not available',
+        };
+      }
+      console.error('No results found for the given drug name');
+      return null;
+    } catch (error) {
+      console.error('Error fetching medicament by ID:', error);
+      return null;
+    }
+  }
+
+  // Obtener medicamentos
+  async fetchAllMedicaments(limit = 10) {
+    try {
+      const response = await fetch(`${this.baseUrl}?limit=${limit}`);
+      const { results } = await response.json();  
+
+      if (results?.length) {
+        return results.map(item => ({
+          id: item.id,
+          name: item.openfda.generic_name?.[0] || 'N/A',
+          brandName: item.openfda.brand_name?.[0] || 'N/A',
+          purpose: item.purpose?.[0] || 'No purpose information available',
+          activeIngredient: item.active_ingredient?.join(', ') || 'No active ingredients available',
+          warnings: item.warnings?.join(' ') || 'No warnings available',
+        }));
+      }
+      console.error('No results found');
+      return [];
     } catch (error) {
       console.error('Error fetching medicaments:', error);
       return [];
