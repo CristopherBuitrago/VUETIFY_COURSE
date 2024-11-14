@@ -1,4 +1,4 @@
-# vue-vuetify-course
+# vue-project
 
 ## Project setup
 ```
