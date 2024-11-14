@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    class="mx-auto"
-    width="400"
-    height="180"
-  >
+  <v-card class="mx-auto" width="400" height="180">
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="text-h5 mb-1">
@@ -16,14 +12,17 @@
         tile
         size="80"
         color="blue lighten-2"
+        :src="imageSrc"
       ></v-list-item-avatar>
     </v-list-item>
 
     <v-card-actions>
       <v-btn
+        link
         outlined
         rounded
         text
+        :to="{ name: 'medicamentInfo', params: { brandName: title } }"
       >
         More
       </v-btn>
@@ -40,14 +39,12 @@ export default {
       type: String,
       default: 'No indications of use'
     },
-    // Propiedad opcional para la imagen
     image: {
       type: String,
-      default: 'https://wpdirecto.com/wp-content/uploads/2017/08/alt-de-una-imagen.png' // Imagen por defecto
+      default: 'https://wpdirecto.com/wp-content/uploads/2017/08/alt-de-una-imagen.png'
     }
   },
   computed: {
-    // Computed para manejar la imagen, mostrando la imagen predeterminada si no hay una imagen proporcionada
     imageSrc() {
       return this.image || 'https://wpdirecto.com/wp-content/uploads/2017/08/alt-de-una-imagen.png';
     }

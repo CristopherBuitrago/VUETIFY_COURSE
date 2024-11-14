@@ -7,7 +7,7 @@
 
     <!-- Título de la barra de herramientas -->
     <v-toolbar-title>
-      <v-header>Medifarm</v-header>
+      Medifarm
     </v-toolbar-title>
 
     <!-- Espaciador para alinear elementos al final -->
