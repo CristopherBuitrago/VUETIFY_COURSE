@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-card flat width="100%">
     <v-subheader class="grey--text">Medicaments</v-subheader>
     <v-container class="my-5">
       <v-row justify="center">
-        <v-col cols="12" align="center">
+        <v-col cols="12" sm="8" md="6" align="center">
           <h1>Medicaments</h1>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt commodi totam aliquid vitae reprehenderit consequuntur iure eligendi blanditiis exercitationem nam dicta cumque, iste nisi inventore quibusdam facilis mollitia ullam impedit!</p>
         </v-col>
@@ -26,7 +26,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-card>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-subheader class="grey--text">Home page</v-subheader>
+  <v-card width="100%">
+    <v- class="grey--text">Home page</v->
     <v-container class="my-5">
       <v-row justify="center">
         <v-col cols="12" sm="8" md="6" align="center">
@@ -26,7 +26,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-card>
 </template>
 
 <script>

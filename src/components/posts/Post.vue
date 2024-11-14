@@ -3,7 +3,6 @@
     class="mx-auto"
     width="400"
     height="180"
-    color="grey lighten-2"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -26,7 +25,7 @@
         rounded
         text
       >
-        Button
+        More
       </v-btn>
     </v-card-actions>
   </v-card>
