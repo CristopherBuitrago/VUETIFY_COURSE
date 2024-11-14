@@ -1,4 +1,5 @@
 class MedicamentService {
+
   constructor() {
     this.baseUrl = 'https://api.fda.gov/drug/label.json';
   }

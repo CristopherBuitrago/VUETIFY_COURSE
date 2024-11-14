@@ -32,11 +32,11 @@
 
 <script>
 export default {
-  name: 'Post',
+  name: 'MedicamentPost',
   props: {
     title: String,
     description: {
-      type: String,
+      type: String, 
       default: 'No indications of use'
     },
     image: {

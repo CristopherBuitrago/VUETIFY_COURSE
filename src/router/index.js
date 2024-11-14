@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue"
 import ToolsView from "../views/ToolsView.vue"
 import MedicamentsView from '../views/MedicamentsView.vue'
 import MedicamentInfoView from '../views/MedicamentInfoView.vue'
+import ToolInfoView from '../views/ToolInfoView.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/tools',
     name: 'tools',
     component: ToolsView
+  },
+  {
+    path: '/tool-info/:brandName', // Ruta dinámica para el ID del medicamento
+    name: 'toolInfo',
+    component: ToolInfoView
   },
   {
     path: '/medicaments',

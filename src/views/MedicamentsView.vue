@@ -24,7 +24,7 @@
           v-for="drug in drugs"
           :key="`${drug.id}`"
         >
-          <Post :id="drug.id" :title="drug.name" :description="drug.case"/>
+          <MedicamentPost :id="drug.id" :title="drug.name" :description="drug.case"/>
         </v-col>
       </v-row>
     </v-container>
@@ -32,22 +32,22 @@
 </template>
 
 <script>
-import Post from '../components/posts/Post.vue';
+import MedicamentPost from '../components/posts/MedicamentPost.vue';
 import MedicamentService from '../services/medicament/MedicamentService';
 
 export default {
-  name: 'MedicamentView',
+  name: 'MedicamentsView',
   data() {
     return {
       drugs: []
     }
   },
   components: {
-    Post
+    MedicamentPost
   },
   async mounted() {
     // Llamada al servicio para obtener los medicamentos
-    this.drugs =await MedicamentService.fetchAllMedicaments();
+    this.drugs = await MedicamentService.fetchAllMedicaments();
   }
 }
 </script>
