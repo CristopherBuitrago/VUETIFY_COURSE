@@ -1,19 +1,34 @@
 <template>
-  <v-card 
-    dark
-    color="blue darken-3"
-    class="d-flex flex-column align-center"
-    width="100%"
+  <v-card
+    class="mx-auto"
+    width="400"
+    height="180"
+    color="grey lighten-2"
   >
-    <v-card-title>{{ title }}</v-card-title>
-    
-    <!-- Imagen predeterminada en caso de que no se proporcione una imagen -->
-    <v-img
-      :src="imageSrc"
-    />
+    <v-list-item three-line>
+      <v-list-item-content>
+        <v-list-item-title class="text-h5 mb-1">
+          {{ title }}
+        </v-list-item-title>
+        <v-list-item-subtitle>{{ description }}</v-list-item-subtitle>
+      </v-list-item-content>
 
-    <v-card-text> <span>USE IN CASE OF: </span> {{ description }}</v-card-text>
-    <v-btn light class="mb-5">More</v-btn>
+      <v-list-item-avatar
+        tile
+        size="80"
+        color="blue lighten-2"
+      ></v-list-item-avatar>
+    </v-list-item>
+
+    <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+        text
+      >
+        Button
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 

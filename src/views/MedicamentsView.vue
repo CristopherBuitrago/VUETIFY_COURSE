@@ -17,7 +17,7 @@
           sm="5"
           md="4"
           lg="3"
-          align="center"
+          align="center"  
           class="d-flex justify-center"
           v-for="drug in drugs"
           :key="`${drug.id}-${drug.name}`"
